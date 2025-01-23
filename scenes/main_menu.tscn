@@ -1,6 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://botyh8rx40gmg"]
+[gd_scene load_steps=3 format=3 uid="uid://botyh8rx40gmg"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2tnr8"]
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_r5rar"]
+font_size = 40
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
 script = ExtResource("1_2tnr8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.552956, 0.552956, 0.552956, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 163.0
+offset_right = 174.0
+offset_bottom = 252.0
+grow_horizontal = 2
+text = "TitleTitleTitleTitle"
+label_settings = SubResource("LabelSettings_r5rar")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 337.0
+offset_right = 771.0
+offset_bottom = 472.0
+scale = Vector2(0.990175, 1.52677)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start
+"
+flat = true
+
+[node name="Option" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Option
+"
+flat = true
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+flat = true
