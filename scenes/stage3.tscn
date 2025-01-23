@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_l1pcb"]
 
-[node name="stage3" type="Node2D"]
+[node name="Stage3" type="Node2D"]
 scale = Vector2(1.05714, 1)
 script = ExtResource("1_l1pcb")
 
