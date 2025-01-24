@@ -6,6 +6,12 @@ func _ready():
     var goal = get_node("Goal")
     goal.notice_hit_goal.connect(self._on_stage_cleared)
 
+    var killzone = get_node("Killzone")
+    killzone.notice_end_killtimer.connect(self._on_end_killtimer)
+
+
+func _on_end_killtimer():
+    get_tree().reload_current_scene()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

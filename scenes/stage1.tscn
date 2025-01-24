@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8phajesdt7ex"]
+[gd_scene load_steps=18 format=3 uid="uid://b8phajesdt7ex"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_it8e3"]
 [ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="2_po2c6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="6_1qvi6"]
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="7_t2lmb"]
 [ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="8_q2es6"]
+[ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="9_4caju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jwim"]
 resource_name = "wall"
@@ -578,6 +579,18 @@ font_size = 100
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3phvk"]
 size = Vector2(21, 96)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j3ts"]
+size = Vector2(29.9027, 145.469)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gingw"]
+size = Vector2(2709.54, 168)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1i3a"]
+size = Vector2(2321, 221)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2n47e"]
+size = Vector2(196, 935)
+
 [node name="Stage1" type="Node2D"]
 script = ExtResource("1_it8e3")
 
@@ -614,6 +627,9 @@ scale = Vector2(0.0459519, 0.0529529)
 text = "1"
 label_settings = SubResource("LabelSettings_ns5qd")
 
+[node name="KillzoneTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="Gunner" parent="." instance=ExtResource("4_fi18f")]
 position = Vector2(-15, 312)
 
@@ -629,8 +645,6 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(473.78, 287)
 shape = SubResource("RectangleShape2D_3phvk")
-
-[node name="Timer" type="Timer" parent="Wall"]
 
 [node name="Enemy" type="Node2D" parent="."]
 position = Vector2(416, 314)
@@ -650,3 +664,24 @@ position = Vector2(442.404, -126.327)
 [node name="Goal" parent="." instance=ExtResource("7_t2lmb")]
 position = Vector2(1974, -89)
 scale = Vector2(3.37918, 3.0314)
+
+[node name="Killzone" parent="." instance=ExtResource("9_4caju")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-225.135, -97)
+rotation = -3.14159
+scale = Vector2(6.74618, -6.45382)
+shape = SubResource("RectangleShape2D_6j3ts")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1038, 461)
+scale = Vector2(1.00903, 1)
+shape = SubResource("RectangleShape2D_gingw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1043.5, -456)
+shape = SubResource("RectangleShape2D_k1i3a")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(2306, -95)
+shape = SubResource("RectangleShape2D_2n47e")
