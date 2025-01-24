@@ -1,0 +1,28 @@
+extends "res://scripts/parts_scripts/projectile.gd"
+
+var is_falldown: bool = false
+
+func _ready():
+    var wall = get_node("../wall")
+    wall.body_entered.connect(self._on_wall_body_entered)
+
+func _physics_process(_delta):
+    if Input.is_action_just_pressed("B_button"):
+        fire(get_global_mouse_position())
+
+    if is_falldown:
+        velocity.y += gravity * 0.01
+    else:
+        velocity = direction * speed
+    move_and_slide()
+
+
+
+
+
+func _on_wall_body_entered(body:Node2D):
+    print_debug("wall hit")
+    velocity = Vector2.ZERO
+    speed = 0
+    is_falldown = true
+

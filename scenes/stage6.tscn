@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_cg843"]
 
-[node name="stage6" type="Node2D"]
+[node name="Stage6" type="Node2D"]
 script = ExtResource("1_cg843")
 
 [node name="ColorRect" type="ColorRect" parent="."]
