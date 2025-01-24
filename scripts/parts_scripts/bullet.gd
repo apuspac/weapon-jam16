@@ -12,6 +12,9 @@ func _ready():
     for enemy in enemys:
         enemy.notice_hit_enemy.connect(self._on_hit_enemy)
 
+    var goal = get_node("../Goal")
+    goal.notice_hit_goal.connect(self._on_hit_goal)
+
 
 func _physics_process(_delta):
     if is_fire == true and Input.is_action_just_pressed("B_button"):
@@ -32,6 +35,14 @@ func _on_hit_enemy():
     velocity = Vector2(0.0, -500)
     is_falldown = true
     is_fire = true
+
+func _on_hit_goal():
+    print_debug("goal hit")
+    velocity = Vector2(0.0, 0.0)
+    direction = Vector2.ZERO
+    speed = 0
+    is_falldown = false
+    is_fire = false
 
 
 
