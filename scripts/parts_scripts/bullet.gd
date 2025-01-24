@@ -7,8 +7,10 @@ func _ready():
 
     var wall = get_node("../Wall")
     wall.body_entered.connect(self._on_wall_body_entered)
-    var enemy = get_node("../Enemy")
-    enemy.notice_hit_enemy.connect(self._on_hit_enemy)
+
+    var enemys = get_node("../Enemy").get_children()
+    for enemy in enemys:
+        enemy.notice_hit_enemy.connect(self._on_hit_enemy)
 
 
 func _physics_process(_delta):
