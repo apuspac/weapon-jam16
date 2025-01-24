@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://df6qrre6hejwk"]
+[gd_scene load_steps=5 format=3 uid="uid://df6qrre6hejwk"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_ysxjp"]
+[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="2_jaxd0"]
+[ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="3_nqu0i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xhk1x"]
+font_size = 200
 
 [node name="Stage2" type="Node2D"]
 script = ExtResource("1_ysxjp")
@@ -11,15 +16,23 @@ offset_bottom = 40.0
 scale = Vector2(31.913, 17.9309)
 color = Color(0.466181, 0.466181, 0.466181, 1)
 
-[node name="Control" type="Control" parent="ColorRect"]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="ColorRect/Control"]
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(0.357008, 0.4114)
 text = "2"
+label_settings = SubResource("LabelSettings_xhk1x")
+
+[node name="Clear" parent="CanvasLayer" instance=ExtResource("2_jaxd0")]
+visible = false
+
+[node name="Goal" parent="." instance=ExtResource("3_nqu0i")]
