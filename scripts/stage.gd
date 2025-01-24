@@ -7,10 +7,10 @@ func _ready():
     goal.notice_hit_goal.connect(self._on_stage_cleared)
 
     var killzone = get_node("Killzone")
-    killzone.notice_enter_killzone.connect(self._on_enter_killzone)
+    killzone.notice_end_killtimer.connect(self._on_end_killtimer)
 
 
-func _on_enter_killzone():
+func _on_end_killtimer():
     get_tree().reload_current_scene()
 
 

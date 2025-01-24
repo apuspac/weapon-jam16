@@ -627,6 +627,9 @@ scale = Vector2(0.0459519, 0.0529529)
 text = "1"
 label_settings = SubResource("LabelSettings_ns5qd")
 
+[node name="KillzoneTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="Gunner" parent="." instance=ExtResource("4_fi18f")]
 position = Vector2(-15, 312)
 
