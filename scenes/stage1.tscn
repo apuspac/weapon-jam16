@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8phajesdt7ex"]
+[gd_scene load_steps=10 format=3 uid="uid://b8phajesdt7ex"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_it8e3"]
 [ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="2_po2c6"]
 [ext_resource type="Texture2D" uid="uid://dfu2wwfdw77w5" path="res://assets/tiny-creatures/tiny-creatures/Tilemap/Kenney_tiny_dungeon.png" id="3_t1jmj"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="4_fi18f"]
 [ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="5_3uoog"]
+[ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="6_1qvi6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jwim"]
 resource_name = "wall"
@@ -600,24 +601,38 @@ text = "1"
 scale = Vector2(0.999365, 1)
 tile_set = SubResource("TileSet_34aaj")
 format = 2
-layer_0/tile_data = PackedInt32Array(983068, 131073, 1, 1048604, 131073, 1, 1114140, 131073, 1, 1179676, 131073, 1, 1245212, 131073, 1, 1310748, 131073, 1, 1376284, 1, 0, 1376283, 1, 0, 1376282, 1, 0, 1376281, 1, 0, 1376280, 1, 0, 1376279, 1, 0, 1376278, 1, 0, 1376277, 1, 0, 1376276, 1, 0, 1376275, 1, 0, 1376274, 1, 0, 1376273, 1, 0, 1376272, 1, 0, 1376271, 1, 0, 1376270, 1, 0, 1376269, 1, 0, 1376268, 1, 0, 1376267, 1, 0, 1376266, 1, 0, 1376265, 1, 0, 1376264, 1, 0, 1376263, 1, 0, 1376262, 1, 0, 1376261, 1, 0, 1376260, 1, 0, 1376259, 1, 0, 1376258, 1, 0, 1376257, 1, 0, 1376256, 1, 0, 1441791, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 983072, 1, 0, 983073, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 1, 0, 983077, 1, 0, 983078, 1, 0, 983079, 1, 0, 983080, 1, 0, 983081, 1, 0, 983082, 1, 0, 983083, 1, 0, 983084, 1, 0, 983085, 1, 0, 983086, 1, 0, 983087, 1, 0, 983088, 1, 0, 983089, 1, 0, 983090, 1, 0, 983091, 1, 0, 983092, 1, 0, 983093, 1, 0, 983094, 1, 0)
+layer_0/tile_data = PackedInt32Array(983068, 131073, 1, 1048604, 131073, 1, 1114140, 131073, 1, 1179676, 131073, 1, 1245212, 131073, 1, 1310748, 131073, 1, 1376284, 1, 0, 1376283, 1, 0, 1376282, 1, 0, 1376281, 1, 0, 1376280, 1, 0, 1376279, 1, 0, 1376278, 1, 0, 1376277, 1, 0, 1376276, 1, 0, 1376275, 1, 0, 1376274, 1, 0, 1376273, 1, 0, 1376272, 1, 0, 1376271, 1, 0, 1376270, 1, 0, 1376269, 1, 0, 1376268, 1, 0, 1376267, 1, 0, 1376266, 1, 0, 1376265, 1, 0, 1376264, 1, 0, 1376263, 1, 0, 1376262, 1, 0, 1376261, 1, 0, 1376260, 1, 0, 1376259, 1, 0, 1376258, 1, 0, 1376257, 1, 0, 1376256, 1, 0, 1441791, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 983072, 1, 0, 983073, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 1, 0, 983077, 1, 0, 983078, 1, 0, 983079, 1, 0, 983080, 1, 0, 983081, 1, 0, 983082, 1, 0, 983083, 1, 0, 983084, 1, 0, 983085, 1, 0, 983086, 1, 0, 983087, 1, 0, 983088, 1, 0, 983089, 1, 0, 983090, 1, 0, 983091, 1, 0, 983092, 1, 0, 983093, 1, 0, 983094, 1, 0, 589879, 131073, 1, 655415, 131073, 1, 720951, 131073, 1, 786487, 131073, 1, 852023, 131073, 1, 917559, 131073, 1, 983095, 1, 0, 589880, 1, 0, 589881, 1, 0, 589882, 1, 0, 589883, 1, 0, 589884, 1, 0, 589885, 1, 0, 589886, 1, 0, 589887, 1, 0, 589888, 1, 0, 589889, 1, 0, 589890, 1, 0, 589891, 1, 0, 589892, 1, 0, 589893, 1, 0, 589894, 1, 0, 589895, 1, 0, 589896, 1, 0, 589897, 1, 0, 589898, 1, 0, 589899, 1, 0, 589900, 1, 0, 589901, 1, 0, 262222, 131073, 1, 327758, 131073, 1, 393294, 131073, 1, 458830, 131073, 1, 524366, 131073, 1, 196686, 131073, 1, 589902, 1, 0, 196687, 1, 0, 196688, 1, 0, 196689, 1, 0, 196690, 1, 0, 196691, 1, 0, 196692, 1, 0, 196693, 1, 0, 196694, 1, 0, 196695, 1, 0, 196696, 1, 0, 196697, 1, 0, 196698, 1, 0, 196699, 1, 0, 196700, 1, 0, 196701, 1, 0, 196702, 1, 0, 196703, 1, 0, 196704, 1, 0)
 
 [node name="Gunner" parent="." instance=ExtResource("4_fi18f")]
 position = Vector2(-15, 312)
 
 [node name="Bullet" parent="." instance=ExtResource("2_po2c6")]
 position = Vector2(7, 312)
-collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="Bullet"]
 position = Vector2(-4, -72)
 
-[node name="wall" parent="." instance=ExtResource("5_3uoog")]
+[node name="Wall" parent="." instance=ExtResource("5_3uoog")]
 scale = Vector2(0.956139, 1)
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(473.78, 287)
 shape = SubResource("RectangleShape2D_3phvk")
 
-[node name="Timer" type="Timer" parent="wall"]
+[node name="Timer" type="Timer" parent="Wall"]
+
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2(416, 314)
+scale = Vector2(2.52032, 2.39854)
+
+[node name="Enemy1" parent="Enemy" instance=ExtResource("6_1qvi6")]
+
+[node name="Enemy2" parent="Enemy" instance=ExtResource("6_1qvi6")]
+position = Vector2(172.2, -45.0274)
+
+[node name="Enemy3" parent="Enemy" instance=ExtResource("6_1qvi6")]
+position = Vector2(318.214, -85.8856)
+
+[node name="Enemy4" parent="Enemy" instance=ExtResource("6_1qvi6")]
+position = Vector2(442.404, -126.327)

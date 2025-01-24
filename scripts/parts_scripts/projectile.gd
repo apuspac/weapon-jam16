@@ -4,9 +4,12 @@ var speed: float = 0
 var direction: Vector2 = Vector2.ZERO
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var is_fire: bool = false
+
 
 func _ready():
-    pass
+    is_fire = true
+
 
 func fire(target_position: Vector2):
     direction = (target_position - self.global_position).normalized()

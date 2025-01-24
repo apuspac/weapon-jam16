@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://x1ti0vcmjvvw"]
+
+[ext_resource type="Texture2D" uid="uid://b6gq1x1xobq61" path="res://assets/tiny-creatures/tiny-creatures/Tiles/tile_0016.png" id="1_21gs8"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/enemy.gd" id="1_s2lpt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6brxi"]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_s2lpt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_21gs8")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_6brxi")
