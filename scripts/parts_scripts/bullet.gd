@@ -15,6 +15,9 @@ func _ready():
     var goal = get_node("../Goal")
     goal.notice_hit_goal.connect(self._on_hit_goal)
 
+    var killzone_enter = get_node("../Killzone")
+    killzone_enter.notice_enter_killzone.connect(self._on_enter_killzone)
+
 
 func _physics_process(_delta):
     if is_fire == true and Input.is_action_just_pressed("B_button"):
@@ -28,6 +31,7 @@ func _physics_process(_delta):
         velocity = direction * speed
 
     move_and_slide()
+
 
 func _on_hit_enemy():
     print_debug("enemy hit")
@@ -43,6 +47,9 @@ func _on_hit_goal():
     speed = 0
     is_falldown = false
     is_fire = false
+
+func _on_enter_killzone():
+    print_debug("bullet enter killzone")
 
 
 
