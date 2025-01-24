@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8phajesdt7ex"]
+[gd_scene load_steps=10 format=3 uid="uid://b8phajesdt7ex"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_it8e3"]
 [ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="2_po2c6"]
 [ext_resource type="Texture2D" uid="uid://dfu2wwfdw77w5" path="res://assets/tiny-creatures/tiny-creatures/Tilemap/Kenney_tiny_dungeon.png" id="3_t1jmj"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="4_fi18f"]
 [ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="5_3uoog"]
+[ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="6_1qvi6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5jwim"]
 resource_name = "wall"
@@ -607,17 +608,20 @@ position = Vector2(-15, 312)
 
 [node name="Bullet" parent="." instance=ExtResource("2_po2c6")]
 position = Vector2(7, 312)
-collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="Bullet"]
 position = Vector2(-4, -72)
 
-[node name="wall" parent="." instance=ExtResource("5_3uoog")]
+[node name="Wall" parent="." instance=ExtResource("5_3uoog")]
 scale = Vector2(0.956139, 1)
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 position = Vector2(473.78, 287)
 shape = SubResource("RectangleShape2D_3phvk")
 
-[node name="Timer" type="Timer" parent="wall"]
+[node name="Timer" type="Timer" parent="Wall"]
+
+[node name="Enemy" parent="." instance=ExtResource("6_1qvi6")]
+position = Vector2(416, 314)
+scale = Vector2(2.52032, 2.39854)

@@ -3,8 +3,11 @@ extends "res://scripts/parts_scripts/projectile.gd"
 var is_falldown: bool = false
 
 func _ready():
-    var wall = get_node("../wall")
+    var wall = get_node("../Wall")
     wall.body_entered.connect(self._on_wall_body_entered)
+    var enemy = get_node("../Enemy")
+    enemy.notice_hit_enemy.connect(self._on_hit_enemy)
+
 
 func _physics_process(_delta):
     if Input.is_action_just_pressed("B_button"):
@@ -16,7 +19,8 @@ func _physics_process(_delta):
         velocity = direction * speed
     move_and_slide()
 
-
+func _on_hit_enemy():
+    print_debug("enemy hit")
 
 
 
