@@ -618,10 +618,9 @@ label_settings = SubResource("LabelSettings_ns5qd")
 position = Vector2(-15, 312)
 
 [node name="Bullet" parent="." instance=ExtResource("2_po2c6")]
-position = Vector2(7, 312)
+position = Vector2(10, 312)
 
 [node name="Camera2D" type="Camera2D" parent="Bullet"]
-position = Vector2(-4, -72)
 
 [node name="Wall" parent="." instance=ExtResource("5_3uoog")]
 scale = Vector2(0.956139, 1)
