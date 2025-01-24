@@ -11,9 +11,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
     pass
 
-func _on_enemy_area_body_entered(body:Node2D):
+func _on_enemy_area_body_entered(_body: Node2D):
     print_debug("bullet hit")
     notice_hit_enemy.emit()
+    queue_free()
