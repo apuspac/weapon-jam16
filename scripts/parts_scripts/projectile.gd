@@ -11,6 +11,8 @@ var is_falldown: bool = false
 enum States {IDLE, FLIGHT, HIT, IDLEFIRE, FALLDOWN, KILL, GOAL}
 var state: States = States.IDLE
 
+@onready var projectile_sprite = get_node("Sprite2D")
+
 
 func _ready():
     state = States.IDLE
@@ -107,6 +109,12 @@ func _on_wall_body_entered(_body: Node2D):
 
 func _process(_delta):
     draw_projectile_to_mouse()
+
+
+func sprite_rotation(angle: float):
+    projectile_sprite.rotation = angle
+
+
 
 
 # draw line
