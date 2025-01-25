@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8phajesdt7ex"]
+[gd_scene load_steps=19 format=3 uid="uid://b8phajesdt7ex"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_it8e3"]
 [ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="2_po2c6"]
 [ext_resource type="Texture2D" uid="uid://dfu2wwfdw77w5" path="res://assets/tiny-creatures/tiny-creatures/Tilemap/Kenney_tiny_dungeon.png" id="3_t1jmj"]
+[ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="4_arln5"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="4_fi18f"]
 [ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="5_3uoog"]
 [ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="6_1qvi6"]
@@ -627,6 +628,12 @@ scale = Vector2(0.0459519, 0.0529529)
 text = "1"
 label_settings = SubResource("LabelSettings_ns5qd")
 
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_arln5")]
+offset_left = -17.0
+offset_top = 1.0
+offset_right = -17.0
+offset_bottom = 1.0
+
 [node name="KillzoneTimer" type="Timer" parent="."]
 one_shot = true
 
@@ -643,7 +650,7 @@ scale = Vector2(0.956139, 1)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(473.78, 287)
+position = Vector2(481.102, 289)
 shape = SubResource("RectangleShape2D_3phvk")
 
 [node name="Enemy" type="Node2D" parent="."]

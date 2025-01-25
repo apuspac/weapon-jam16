@@ -13,7 +13,6 @@ func _ready():
 
 func fire(target_position: Vector2):
     direction = (target_position - self.global_position).normalized()
-    speed = 500
 
 func _physics_process(_delta):
     velocity = direction * speed
