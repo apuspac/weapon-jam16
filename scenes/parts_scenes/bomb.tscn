@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1cwmavll2alv"]
+
+[ext_resource type="Script" path="res://scripts/parts_scripts/bomb.gd" id="1_xfr3o"]
+[ext_resource type="Texture2D" uid="uid://orrjii5aqkdv" path="res://assets/tiny-creatures/tiny-creatures/Tiles/tile_0059.png" id="2_c5qmf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n28q3"]
+size = Vector2(11.5, 13)
+
+[node name="Bomb" type="CharacterBody2D"]
+collision_mask = 18
+script = ExtResource("1_xfr3o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c5qmf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n28q3")

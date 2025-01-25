@@ -50,20 +50,17 @@ func change_state(next_state: States):
     state = next_state
 
 func idle():
-    print("idle_fire")
     if Input.is_action_just_pressed("B_button"):
         fire(get_global_mouse_position())
         change_state(States.FLIGHT)
 
 
 func flight(_delta):
-    print("flight")
     velocity = direction * speed
     move_and_slide()
 
 # hitしたときに鉛直上向きに上昇
 func hit():
-    print("hit")
     speed = 0
     velocity = Vector2(0.0, -800)
     change_state(States.IDLEFIRE)

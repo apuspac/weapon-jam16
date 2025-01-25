@@ -1,20 +1,23 @@
 extends Projectile
 
-var stamnina
+var stamina: float = 100.0
 
 func _ready():
-    # projectile.gdの_read()
     super._ready()
 
 
 func flight(_delta):
-    var mouse_position = get_global_mouse_position()
-    var direction = (mouse_position - position).normalized()
-    position += direction * speed * _delta
+    if stamina > 0:
+        var mouse_position = get_global_mouse_position()
+        var _direction = (mouse_position - position).normalized()
+        position += _direction * speed * _delta
+    else:
+        change_state(States.FALLDOWN)
 
-
-    # position = position.move_toward(kjget_global_mouse_position(), speed * _delta)
+    # print(stamina)
+    stamina -= 1.0
 
 func fire(target_position: Vector2):
     super.fire(target_position)
-    speed = 200
+    speed = 750
+    stamina = 100.0
