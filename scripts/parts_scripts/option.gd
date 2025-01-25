@@ -17,7 +17,6 @@ func _ready():
     option_menu[0].button_pressed = Global.visible_line
 
 func _on_option_menu():
-    print_debug("option")
     visible = true
 
 func _on_return_button():
@@ -26,6 +25,5 @@ func _on_return_button():
 
 
 func _on_line_toggle(toggled_on: bool):
-    print_debug(toggled_on)
     Global.visible_line = toggled_on
     notice_toggle_line.emit(toggled_on)

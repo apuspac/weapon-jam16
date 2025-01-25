@@ -86,7 +86,7 @@ func break_goal():
 func kill():
     move_and_slide()
     # TODO: bulletがanimationがあれば、
-    print_debug("bullet enter killzone")
+    # print_debug("bullet enter killzone")
 
 func fire(target_position: Vector2):
     direction = (target_position - self.global_position).normalized()
