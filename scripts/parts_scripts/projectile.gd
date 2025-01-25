@@ -37,6 +37,7 @@ func draw_projectile_to_mouse():
 
 
 func _draw():
-    draw_circle(point1, 3, Color.WHITE)
-    draw_circle(point2, 3, Color.GREEN)
-    draw_line(point1, point2, color, width)
+    if Global.visible_line == true:
+        draw_circle(point1, 3, Color.WHITE)
+        draw_circle(point2, 3, Color.GREEN)
+        draw_line(point1, point2, color, width)
