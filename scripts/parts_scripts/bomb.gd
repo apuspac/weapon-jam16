@@ -14,7 +14,6 @@ func flight(_delta):
 func fire(target_position: Vector2):
     super.fire(target_position)
     var mouse_distance = (target_position - global_position).length()
-    print(mouse_distance)
     speed = mouse_distance * 3.5
     velocity = direction * speed
 
