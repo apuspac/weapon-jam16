@@ -1,4 +1,3 @@
-# extends "res://scripts/parts_scripts/projectile.gd"
 extends Projectile
 
 
