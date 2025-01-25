@@ -13,5 +13,6 @@ func _on_kill_zone_body_entered(_body: Node2D):
     killzone_timer.start()
 
 
+# killされるまでの猶予timer
 func _on_killtimer_timeout():
     notice_end_killtimer.emit()
