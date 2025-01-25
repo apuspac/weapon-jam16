@@ -11,8 +11,12 @@ func flight(_delta):
         var mouse_position = get_global_mouse_position()
         var _direction = (mouse_position - position).normalized()
         position += _direction * speed * _delta
+
+        sprite_rotation(_direction.angle())
     else:
+        sprite_rotation(90.0)
         change_state(States.FALLDOWN)
+
 
     # print(stamina)
     stamina -= 1.0
