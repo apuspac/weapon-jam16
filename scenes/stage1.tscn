@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b8phajesdt7ex"]
+[gd_scene load_steps=20 format=3 uid="uid://b8phajesdt7ex"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_it8e3"]
 [ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="2_po2c6"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="4_arln5"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="4_fi18f"]
 [ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="5_3uoog"]
+[ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="5_5ra0t"]
 [ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="6_1qvi6"]
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="7_t2lmb"]
 [ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="8_q2es6"]
@@ -629,6 +630,12 @@ text = "1"
 label_settings = SubResource("LabelSettings_ns5qd")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_arln5")]
+offset_left = -17.0
+offset_top = 1.0
+offset_right = -17.0
+offset_bottom = 1.0
+
+[node name="Option" parent="CanvasLayer" instance=ExtResource("5_5ra0t")]
 offset_left = -17.0
 offset_top = 1.0
 offset_right = -17.0

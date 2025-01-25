@@ -27,9 +27,14 @@ var color : Color = Color.GREEN
 
 
 func _process(_delta):
+    draw_projectile_to_mouse()
+
+
+func draw_projectile_to_mouse():
     point1 = global_position - position
     point2 = get_global_mouse_position() - position
     queue_redraw()
+
 
 func _draw():
     draw_circle(point1, 3, Color.WHITE)
