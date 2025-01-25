@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdble4qke45qr"]
 
 [ext_resource type="Script" path="res://scripts/parts_scripts/homing.gd" id="1_swc21"]
-[ext_resource type="Texture2D" uid="uid://ckf37f680fjue" path="res://assets/tiny-creatures/tiny-creatures/Tiles/tile_0057.png" id="2_ufl8n"]
+[ext_resource type="Texture2D" uid="uid://diiw8y3msgkar" path="res://assets/my_asset/missile.png" id="2_wubmy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yfyn"]
-size = Vector2(16, 16)
+size = Vector2(21, 7)
 
 [node name="Homing" type="CharacterBody2D"]
 collision_mask = 18
 script = ExtResource("1_swc21")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ufl8n")
+texture = ExtResource("2_wubmy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 0.5)
 shape = SubResource("RectangleShape2D_4yfyn")

@@ -1,17 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1cwmavll2alv"]
 
 [ext_resource type="Script" path="res://scripts/parts_scripts/bomb.gd" id="1_xfr3o"]
-[ext_resource type="Texture2D" uid="uid://orrjii5aqkdv" path="res://assets/tiny-creatures/tiny-creatures/Tiles/tile_0059.png" id="2_c5qmf"]
+[ext_resource type="Texture2D" uid="uid://dxrub664wal01" path="res://assets/my_asset/bomb_eye.png" id="2_os3pi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n28q3"]
-size = Vector2(11.5, 13)
+size = Vector2(51.3731, 12.0366)
 
 [node name="Bomb" type="CharacterBody2D"]
 collision_mask = 18
 script = ExtResource("1_xfr3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_c5qmf")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_os3pi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.03547, 4.95594)
+scale = Vector2(0.546413, 2.1674)
 shape = SubResource("RectangleShape2D_n28q3")
