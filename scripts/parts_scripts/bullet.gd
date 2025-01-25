@@ -1,38 +1,13 @@
-extends "res://scripts/parts_scripts/projectile.gd"
+# extends "res://scripts/parts_scripts/projectile.gd"
+extends Projectile
 
-var is_falldown: bool = false
 
 func _ready():
     # projectile.gdの_read()
     super._ready()
 
-    var wall = get_node("../Wall")
-    wall.body_entered.connect(self._on_wall_body_entered)
-
-    var enemys = get_node("../Enemy").get_children()
-    for enemy in enemys:
-        enemy.notice_hit_enemy.connect(self._on_hit_enemy)
-
-    var goal = get_node("../Goal")
-    goal.notice_hit_goal.connect(self._on_hit_goal)
-
-    var killzone_enter = get_node("../Killzone")
-    killzone_enter.notice_enter_killzone.connect(self._on_enter_killzone)
-
-
-
-
-func _physics_process(_delta):
-    if is_fire == true and Input.is_action_just_pressed("B_button"):
-        is_fire = false
-        is_falldown = false
-        fire(get_global_mouse_position())
-
-    if is_falldown:
-        velocity.y += gravity * 0.02
-    else:
-        velocity = direction * speed
-
+func flight():
+    velocity = direction * speed
     move_and_slide()
 
 func fire(target_position: Vector2):
@@ -40,27 +15,3 @@ func fire(target_position: Vector2):
     speed = 2000
 
 
-# hitしたときに鉛直上向きに上昇
-func _on_hit_enemy():
-    speed = 0
-    velocity = Vector2(0.0, -800)
-    is_falldown = true
-    is_fire = true
-
-func _on_hit_goal():
-    print_debug("goal hit")
-    velocity = Vector2(0.0, 0.0)
-    direction = Vector2.ZERO
-    speed = 0
-    is_falldown = false
-    is_fire = false
-
-func _on_enter_killzone():
-    # TODO: bulletがanimationがあれば、
-    print_debug("bullet enter killzone")
-
-func _on_wall_body_entered(_body: Node2D):
-    print_debug("wall hit")
-    velocity = Vector2.ZERO
-    speed = 0
-    is_falldown = true
