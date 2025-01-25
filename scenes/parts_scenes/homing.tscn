@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdble4qke45qr"]
+
+[ext_resource type="Script" path="res://scripts/parts_scripts/homing.gd" id="1_swc21"]
+[ext_resource type="Texture2D" uid="uid://ckf37f680fjue" path="res://assets/tiny-creatures/tiny-creatures/Tiles/tile_0057.png" id="2_ufl8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yfyn"]
+size = Vector2(16, 16)
+
+[node name="Homing" type="CharacterBody2D"]
+collision_mask = 18
+script = ExtResource("1_swc21")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ufl8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4yfyn")

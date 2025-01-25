@@ -18,8 +18,8 @@ func _ready():
     var wall = get_node("../Wall")
     wall.body_entered.connect(self._on_wall_body_entered)
 
-    var enemys = get_node("../Enemy").get_children()
-    for enemy in enemys:
+    var enemies = get_tree().get_nodes_in_group("Enemy")
+    for enemy in enemies:
         enemy.notice_hit_enemy.connect(self._on_hit_enemy)
 
     var goal = get_node("../Goal")
@@ -34,7 +34,7 @@ func _physics_process(_delta):
         States.IDLE:
             idle()
         States.FLIGHT:
-            flight()
+            flight(_delta)
         States.HIT:
             hit()
         States.IDLEFIRE:
@@ -56,7 +56,7 @@ func idle():
         change_state(States.FLIGHT)
 
 
-func flight():
+func flight(_delta):
     print("flight")
     velocity = direction * speed
     move_and_slide()

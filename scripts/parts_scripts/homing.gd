@@ -1,11 +1,20 @@
-extends CharacterBody2D
+extends Projectile
 
+var stamnina
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-    pass # Replace with function body.
+    # projectile.gdの_read()
+    super._ready()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-    pass
+func flight(_delta):
+    var mouse_position = get_global_mouse_position()
+    var direction = (mouse_position - position).normalized()
+    position += direction * speed * _delta
+
+
+    # position = position.move_toward(kjget_global_mouse_position(), speed * _delta)
+
+func fire(target_position: Vector2):
+    super.fire(target_position)
+    speed = 200

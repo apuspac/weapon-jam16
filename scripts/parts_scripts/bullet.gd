@@ -6,7 +6,7 @@ func _ready():
     # projectile.gdの_read()
     super._ready()
 
-func flight():
+func flight(_delta):
     velocity = direction * speed
     move_and_slide()
 
