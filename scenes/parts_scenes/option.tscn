@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba3m3jfxcgfh5"]
+[gd_scene load_steps=3 format=3 uid="uid://ba3m3jfxcgfh5"]
 
+[ext_resource type="Theme" uid="uid://dlaih7uflgau5" path="res://scripts/parts_scripts/Ui.tres" id="1_05sl5"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/option.gd" id="1_ct003"]
 
 [node name="Option" type="Control"]
@@ -9,12 +10,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_05sl5")
 script = ExtResource("1_ct003")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 537.0
+offset_top = 322.0
+offset_right = 633.0
+offset_bottom = 374.0
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2

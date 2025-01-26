@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dlaih7uflgau5"]
+
+[ext_resource type="FontFile" uid="uid://dcxv05vr2xq83" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_6jbjd"]
+
+[resource]
+default_font = ExtResource("1_6jbjd")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://jknrdunplntn"]
+
+[ext_resource type="Script" path="res://scripts/parts_scripts/elapsed_time.gd" id="1_7leca"]
+[ext_resource type="Theme" uid="uid://dlaih7uflgau5" path="res://scripts/parts_scripts/Ui.tres" id="1_rot3f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j8kpk"]
+font_size = 50
+
+[node name="ElapsedTime" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("1_rot3f")
+label_settings = SubResource("LabelSettings_j8kpk")
+script = ExtResource("1_7leca")
