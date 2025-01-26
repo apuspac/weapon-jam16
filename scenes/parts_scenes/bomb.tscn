@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1cwmavll2alv"]
+[gd_scene load_steps=5 format=3 uid="uid://c1cwmavll2alv"]
 
 [ext_resource type="Script" path="res://scripts/parts_scripts/bomb.gd" id="1_xfr3o"]
 [ext_resource type="Texture2D" uid="uid://dxrub664wal01" path="res://assets/my_asset/bomb_eye.png" id="2_os3pi"]
+[ext_resource type="AudioStream" uid="uid://diakjubp6qtdq" path="res://assets/Classic Arcade SFX/Hit/Hit_3.wav" id="3_03mn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n28q3"]
 size = Vector2(51.3731, 12.0366)
@@ -18,3 +19,7 @@ texture = ExtResource("2_os3pi")
 position = Vector2(-1.03547, 4.95594)
 scale = Vector2(0.546413, 2.1674)
 shape = SubResource("RectangleShape2D_n28q3")
+
+[node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_03mn5")
+bus = &"SFX"

@@ -14,6 +14,7 @@ func fire(target_position: Vector2):
     super.fire(target_position)
     speed = 2000
 
+
     # NOTE: 実装するかは保留
     # var angle = direction.angle()
     # if angle > 2/PI:

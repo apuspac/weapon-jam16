@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fl1t4a44atua"]
+[gd_scene load_steps=6 format=3 uid="uid://fl1t4a44atua"]
 
 [ext_resource type="Script" path="res://scripts/parts_scripts/bullet.gd" id="1_xrf0f"]
 [ext_resource type="Texture2D" uid="uid://dl63ud2cdwsgf" path="res://assets/my_asset/bullet.png" id="2_s5mdy"]
+[ext_resource type="AudioStream" uid="uid://cg3b2ia4sa1ef" path="res://assets/Classic Arcade SFX/Lasers and shooting/Shoot_1.wav" id="3_0sfpe"]
+[ext_resource type="AudioStream" uid="uid://cege872w14a5n" path="res://assets/Classic Arcade SFX/Power ups and power downs/power down_high pitch.wav" id="4_2p28k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n28q3"]
 size = Vector2(35, 18)
@@ -17,3 +19,11 @@ texture = ExtResource("2_s5mdy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_n28q3")
+
+[node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0sfpe")
+bus = &"SFX"
+
+[node name="FalldownSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2p28k")
+bus = &"SFX"

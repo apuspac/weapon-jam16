@@ -12,6 +12,8 @@ enum States {IDLE, FLIGHT, HIT, IDLEFIRE, FALLDOWN, KILL, GOAL}
 var state: States = States.IDLE
 
 @onready var projectile_sprite = get_node("Sprite2D")
+@onready var shoot_sfx = get_node("ShootSFX")
+@onready var falldown_sfx = get_node("FalldownSFX")
 
 
 func _ready():
@@ -78,6 +80,7 @@ func idle_fire():
 func falldown():
     velocity.y += gravity * 0.02
     move_and_slide()
+    falldown_sfx.play()
 
 
 func break_goal():
@@ -91,6 +94,7 @@ func kill():
     # print_debug("bullet enter killzone")
 
 func fire(target_position: Vector2):
+    shoot_sfx.play()
     direction = (target_position - self.global_position).normalized()
 
 

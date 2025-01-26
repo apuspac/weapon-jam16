@@ -2,6 +2,8 @@ extends Node2D
 
 signal notice_hit_goal()
 
+@onready var goal_sfx = get_node("ClearSFX")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,5 +18,6 @@ func _process(_delta):
 
 func _on_goal_area_body_entered(_body: Node2D):
     print_debug("goal hit")
+    goal_sfx.play()
     notice_hit_goal.emit()
     # queue_free()

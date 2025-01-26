@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdble4qke45qr"]
+[gd_scene load_steps=5 format=3 uid="uid://bdble4qke45qr"]
 
 [ext_resource type="Script" path="res://scripts/parts_scripts/homing.gd" id="1_swc21"]
 [ext_resource type="Texture2D" uid="uid://diiw8y3msgkar" path="res://assets/my_asset/missile.png" id="2_wubmy"]
+[ext_resource type="AudioStream" uid="uid://dscpv53gj4mjb" path="res://assets/Classic Arcade SFX/Lasers and shooting/Shoot_2.wav" id="3_3xket"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yfyn"]
 size = Vector2(50.5, 17.5)
@@ -17,3 +18,7 @@ texture = ExtResource("2_wubmy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9.75, 1.25)
 shape = SubResource("RectangleShape2D_4yfyn")
+
+[node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3xket")
+bus = &"SFX"

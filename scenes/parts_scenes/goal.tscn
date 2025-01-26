@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b86dtect06dcl"]
+[gd_scene load_steps=5 format=3 uid="uid://b86dtect06dcl"]
 
 [ext_resource type="Texture2D" uid="uid://qam164ge2xr0" path="res://assets/tiny-creatures/tiny-creatures/Tiles/tile_0014.png" id="1_osti2"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/goal.gd" id="1_vpgkk"]
+[ext_resource type="AudioStream" uid="uid://ce1b6gcfq7t0q" path="res://assets/Classic Arcade SFX/Misc/Shiny_object.wav" id="3_m5o07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snpbm"]
 size = Vector2(16, 16)
@@ -17,3 +18,7 @@ collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_snpbm")
+
+[node name="ClearSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_m5o07")
+bus = &"SFX"
