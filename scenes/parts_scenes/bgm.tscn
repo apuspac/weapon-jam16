@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs3bjc8u34tpv"]
+
+[ext_resource type="AudioStream" uid="uid://c2wo7a02gx4tb" path="res://assets/music-loop-bundle-download_pre2023/Patreon Challenge 08.ogg" id="1_utjqe"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/bgm.gd" id="2_2ihd6"]
+
+[node name="BGM" type="AudioStreamPlayer"]
+stream = ExtResource("1_utjqe")
+bus = &"BGM"
+script = ExtResource("2_2ihd6")
