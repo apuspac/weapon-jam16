@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://botyh8rx40gmg"]
+[gd_scene load_steps=4 format=3 uid="uid://botyh8rx40gmg"]
 
+[ext_resource type="Theme" uid="uid://dlaih7uflgau5" path="res://scripts/parts_scripts/Ui.tres" id="1_0gn6b"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2tnr8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r5rar"]
-font_size = 40
+font_size = 53
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+theme = ExtResource("1_0gn6b")
 script = ExtResource("1_2tnr8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -47,15 +49,12 @@ alignment = 1
 layout_mode = 2
 text = "Start
 "
-flat = true
 
 [node name="Option" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Option
 "
-flat = true
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
-flat = true

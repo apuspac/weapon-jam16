@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://h7cv78td1yoe"]
+[gd_scene load_steps=3 format=3 uid="uid://h7cv78td1yoe"]
 
+[ext_resource type="Theme" uid="uid://dlaih7uflgau5" path="res://scripts/parts_scripts/Ui.tres" id="1_kyton"]
 [ext_resource type="Script" path="res://scripts/parts_scripts/pause_menu.gd" id="1_v8tro"]
 
 [node name="PauseMenu" type="Control"]
@@ -9,15 +10,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_kyton")
 script = ExtResource("1_v8tro")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 477.0
+offset_top = 257.0
+offset_right = 609.0
+offset_bottom = 365.0
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -25,12 +31,15 @@ text = "Resume"
 
 [node name="Option" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_kyton")
 text = "Option"
 
 [node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_kyton")
 text = "Main Menu"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_kyton")
 text = "Quit"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b8phajesdt7ex"]
+[gd_scene load_steps=29 format=3 uid="uid://b8phajesdt7ex"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_it8e3"]
 [ext_resource type="Texture2D" uid="uid://cct0taubi07ki" path="res://assets/Paper-Pixels-8x8/with-background/Tiles.png" id="2_gcu8d"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="6_1qvi6"]
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="7_t2lmb"]
 [ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="8_q2es6"]
+[ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="8_qf4i1"]
 [ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="9_4caju"]
 [ext_resource type="PackedScene" uid="uid://b5olgp0dmk5cf" path="res://scenes/parts_scenes/move_floor.tscn" id="12_wd2hx"]
 
@@ -2799,6 +2800,33 @@ size = Vector2(2321, 221)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n47e"]
 size = Vector2(196, 935)
 
+[sub_resource type="Animation" id="Animation_bjpo5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1232, 144)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Enemy/Enemy3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(318.22, -85.8851)]
+}
+
 [sub_resource type="Animation" id="Animation_susts"]
 resource_name = "move"
 length = 5.0
@@ -2828,33 +2856,6 @@ tracks/1/keys = {
 "values": [Vector2(318.22, -85.8851), Vector2(445.421, -85.9332)]
 }
 
-[sub_resource type="Animation" id="Animation_bjpo5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1232, 144)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Enemy/Enemy3:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(318.22, -85.8851)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1fjqq"]
 _data = {
 "RESET": SubResource("Animation_bjpo5"),
@@ -2872,6 +2873,7 @@ scale = Vector2(31.913, 17.9309)
 color = Color(0.466181, 0.466181, 0.466181, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
+visible = false
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_34aaj")
 format = 2
@@ -2887,6 +2889,7 @@ layer_1/tile_data = PackedInt32Array(-786438, 131074, 4, -720902, 131074, 4, -65
 visible = false
 
 [node name="StageLabel" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -2894,7 +2897,6 @@ offset_bottom = 40.0
 scale = Vector2(31.9693, 17.9144)
 
 [node name="Label" type="Label" parent="CanvasLayer/StageLabel"]
-visible = false
 layout_mode = 0
 offset_right = 57.0
 offset_bottom = 137.0
@@ -2915,6 +2917,8 @@ offset_left = -17.0
 offset_top = 1.0
 offset_right = -17.0
 offset_bottom = 1.0
+
+[node name="ElapsedTime" parent="CanvasLayer" instance=ExtResource("8_qf4i1")]
 
 [node name="KillzoneTimer" type="Timer" parent="."]
 one_shot = true
@@ -2978,7 +2982,6 @@ shape = SubResource("RectangleShape2D_2n47e")
 
 [node name="MoveFloor_Enemy3" parent="." instance=ExtResource("12_wd2hx")]
 position = Vector2(1232, 144)
-scale = Vector2(1, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MoveFloor_Enemy3"]
 libraries = {
