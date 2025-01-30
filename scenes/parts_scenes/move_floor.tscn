@@ -43,6 +43,7 @@ animations = [{
 size = Vector2(96, 17.5)
 
 [node name="MoveFloor" type="AnimatableBody2D"]
+scale = Vector2(0.35, 0.35)
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_t7c8c")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_l1pcb"]
 [ext_resource type="Texture2D" uid="uid://dfu2wwfdw77w5" path="res://assets/tiny-creatures/tiny-creatures/Tilemap/Kenney_tiny_dungeon.png" id="2_tp6ur"]
-[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="3_sb4nj"]
+[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scripts/clear_ui_old.tscn" id="3_sb4nj"]
 [ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="4_sjxvb"]
 [ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="5_wgr7y"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="6_iq0ye"]

@@ -1,38 +1,37 @@
-[gd_scene load_steps=19 format=3 uid="uid://dpjgsgv5jsjqe"]
+[gd_scene load_steps=18 format=3 uid="uid://ckqe1acb6xjyc"]
 
-[ext_resource type="Script" path="res://scripts/stage.gd" id="1_jh01a"]
-[ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_m5fsl"]
-[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scripts/clear_ui_old.tscn" id="3_4i5le"]
-[ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="4_uwxy1"]
-[ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="5_1rwdi"]
-[ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="6_e0da8"]
-[ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="7_16ir4"]
-[ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="8_n3g8s"]
-[ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="9_5tfqc"]
-[ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="10_vth3q"]
-[ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="11_mbmys"]
-[ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="12_x3iyv"]
+[ext_resource type="Script" path="res://scripts/stage.gd" id="1_igby0"]
+[ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_1mpgg"]
+[ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="3_vhe1x"]
+[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scripts/clear_ui_old.tscn" id="3_wta20"]
+[ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="4_0uows"]
+[ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="5_p8ifr"]
+[ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="6_6tqv5"]
+[ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="7_tog12"]
+[ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="8_baawd"]
+[ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="9_rs4ti"]
+[ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="10_4rmqx"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_vwn5t"]
+[sub_resource type="LabelSettings" id="LabelSettings_37mc0"]
 font_size = 100
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddyet"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06f2u"]
 size = Vector2(21, 96)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjqd2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ewww"]
 size = Vector2(29.9027, 145.469)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbxv3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hr67a"]
 size = Vector2(2709.54, 168)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4csp0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qps6s"]
 size = Vector2(2321, 221)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v18m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjjcm"]
 size = Vector2(196, 935)
 
-[node name="Stage7" type="Node2D"]
-script = ExtResource("1_jh01a")
+[node name="Stage0" type="Node2D"]
+script = ExtResource("1_igby0")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
@@ -44,10 +43,10 @@ color = Color(0.466181, 0.466181, 0.466181, 1)
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 8)
 scale = Vector2(2, 2)
-tile_set = ExtResource("2_m5fsl")
+tile_set = ExtResource("2_1mpgg")
 format = 2
 layer_0/name = "front"
-layer_0/tile_data = PackedInt32Array(720894, 65538, 1, 720895, 65538, 1, 655360, 65538, 1, 655361, 65538, 1, 655362, 65538, 1, 655363, 65538, 1, 655364, 65538, 1, 655365, 65538, 1, 655366, 65538, 1, 786430, 65538, 1, 851966, 65538, 1, 917502, 65538, 1, 983038, 65538, 1, 1048574, 65538, 1, 1114110, 65538, 1, 786431, 65538, 1, 851967, 65538, 1, 917503, 65538, 1, 983039, 65538, 1, 1048575, 65538, 1, 1114111, 65538, 1, 720896, 65538, 1, 786432, 65538, 1, 851968, 65538, 1, 917504, 65538, 1, 983040, 65538, 1, 1048576, 65538, 1, 720897, 65538, 1, 786433, 65538, 1, 851969, 65538, 1, 917505, 65538, 1, 983041, 65538, 1, 1048577, 65538, 1, 720898, 65538, 1, 786434, 65538, 1, 851970, 65538, 1, 917506, 65538, 1, 983042, 65538, 1, 1048578, 65538, 1, 720899, 65538, 1, 786435, 65538, 1, 851971, 65538, 1, 917507, 65538, 1, 983043, 65538, 1, 1048579, 65538, 1, 720900, 65538, 1, 786436, 65538, 1, 851972, 65538, 1, 917508, 65538, 1, 983044, 65538, 1, 1048580, 65538, 1, 720901, 65538, 1, 786437, 65538, 1, 851973, 65538, 1, 917509, 65538, 1, 983045, 65538, 1, 1048581, 65538, 1, 720902, 65538, 1, 786438, 65538, 1, 851974, 65538, 1, 917510, 65538, 1, 983046, 65538, 1, 1048582, 65538, 1, 589827, 655362, 7, -589819, 65538, 1, -524283, 65538, 1, -458747, 65538, 1, -589818, 65538, 1, -524282, 65538, 1, -458746, 65538, 1, -589817, 65538, 1, -524281, 65538, 1, -458745, 65538, 1, -589816, 65538, 1, -524280, 65538, 1, -458744, 65538, 1, -589815, 65538, 1, -524279, 65538, 1, -458743, 65538, 1, -589814, 65538, 1, -524278, 65538, 1, -458742, 65538, 1, -589813, 65538, 1, -524277, 65538, 1, -458741, 65538, 1, -589812, 65538, 1, -524276, 65538, 1, -458740, 65538, 1, -589811, 65538, 1, -524275, 65538, 1, -458739, 65538, 1, -589810, 65538, 1, -524274, 65538, 1, -458738, 65538, 1, -589809, 65538, 1, -524273, 65538, 1, -458737, 65538, 1, -589808, 65538, 1, -524272, 65538, 1, -458736, 65538, 1, -589807, 65538, 1, -524271, 65538, 1, -458735, 65538, 1, -589806, 65538, 1, -524270, 65538, 1, -458734, 65538, 1, -589805, 65538, 1, -524269, 65538, 1, -458733, 65538, 1, -589804, 65538, 1, -524268, 65538, 1, -458732, 65538, 1, -589803, 65538, 1, -524267, 65538, 1, -458731, 65538, 1, -589802, 65538, 1, -524266, 65538, 1, -458730, 65538, 1, -589801, 65538, 1, -524265, 65538, 1, -458729, 65538, 1, -589800, 65538, 1, -524264, 65538, 1, -458728, 65538, 1, -589799, 65538, 1, -524263, 65538, 1, -458727, 65538, 1, -589798, 65538, 1, -524262, 65538, 1, -458726, 65538, 1, -589797, 65538, 1, -524261, 65538, 1, -458725, 65538, 1, -589796, 65538, 1, -524260, 65538, 1, -458724, 65538, 1, -589795, 65538, 1, -524259, 65538, 1, -458723, 65538, 1, -589794, 65538, 1, -524258, 65538, 1, -458722, 65538, 1, -589793, 65538, 1, -524257, 65538, 1, -458721, 65538, 1, -589792, 65538, 1, -524256, 65538, 1, -458720, 65538, 1, -524255, 65538, 1, -458719, 65538, 1, -1376204, 65538, 1, -1376203, 65538, 1, -1376202, 65538, 1, -1376201, 65538, 1, -1376200, 65538, 1, -1376199, 65538, 1, -1310662, 65538, 1, -1245126, 65538, 1, -1179589, 65538, 1, -1114052, 65538, 1, -1048516, 65538, 1, -982979, 65538, 1, -917443, 65538, 1, -851906, 65538, 1, -786369, 65538, 1, -720833, 65538, 1, -655296, 65538, 1, -589759, 65538, 1, -524223, 65538, 1, -458686, 65538, 1, -458685, 65538, 1, -458684, 65538, 1, -458683, 65538, 1, -458682, 65538, 1, -458681, 65538, 1, -458680, 65538, 1, -458679, 65538, 1, -458678, 65538, 1, -458677, 65538, 1, -458676, 65538, 1, -458675, 65538, 1, -589791, 65538, 1, -655326, 65538, 1, -655325, 65538, 1, -720860, 65538, 1, -786395, 65538, 1, -786394, 65538, 1, -851929, 65538, 1, -917464, 65538, 1, -917463, 65538, 1, -982998, 65538, 1, -1048533, 65538, 1, -1048532, 65538, 1, -1114067, 65538, 1, -1179602, 65538, 1, -1179601, 65538, 1, -1245136, 65538, 1, -1310671, 65538, 1, -1310670, 65538, 1, -1376205, 65538, 1)
+layer_0/tile_data = PackedInt32Array(720894, 65538, 1, 720895, 65538, 1, 655360, 65538, 1, 655361, 65538, 1, 655362, 65538, 1, 655363, 65538, 1, 655364, 65538, 1, 655365, 65538, 1, 655366, 65538, 1, 786430, 65538, 1, 851966, 65538, 1, 917502, 65538, 1, 983038, 65538, 1, 1048574, 65538, 1, 1114110, 65538, 1, 786431, 65538, 1, 851967, 65538, 1, 917503, 65538, 1, 983039, 65538, 1, 1048575, 65538, 1, 1114111, 65538, 1, 720896, 65538, 1, 786432, 65538, 1, 851968, 65538, 1, 917504, 65538, 1, 983040, 65538, 1, 1048576, 65538, 1, 720897, 65538, 1, 786433, 65538, 1, 851969, 65538, 1, 917505, 65538, 1, 983041, 65538, 1, 1048577, 65538, 1, 720898, 65538, 1, 786434, 65538, 1, 851970, 65538, 1, 917506, 65538, 1, 983042, 65538, 1, 1048578, 65538, 1, 720899, 65538, 1, 786435, 65538, 1, 851971, 65538, 1, 917507, 65538, 1, 983043, 65538, 1, 1048579, 65538, 1, 720900, 65538, 1, 786436, 65538, 1, 851972, 65538, 1, 917508, 65538, 1, 983044, 65538, 1, 1048580, 65538, 1, 720901, 65538, 1, 786437, 65538, 1, 851973, 65538, 1, 917509, 65538, 1, 983045, 65538, 1, 1048581, 65538, 1, 720902, 65538, 1, 786438, 65538, 1, 851974, 65538, 1, 917510, 65538, 1, 983046, 65538, 1, 1048582, 65538, 1, 589827, 655362, 7, -524216, 65538, 1, -458680, 65538, 1, -393144, 65538, 1, -327608, 65538, 1, -262072, 65538, 1, -655287, 655362, 7, -589751, 589826, 3, -524215, 65538, 1, -458679, 65538, 1, -393143, 65538, 1, -327607, 65538, 1, -262071, 65538, 1, -655286, 655362, 3, -589750, 655362, 4, -524214, 65538, 1, -458678, 65538, 1, -393142, 65538, 1, -327606, 65538, 1, -262070, 65538, 1, -524213, 65538, 1, -458677, 65538, 1, -393141, 65538, 1, -327605, 65538, 1, -262069, 65538, 1, -524212, 65538, 1, -458676, 65538, 1, -393140, 65538, 1, -327604, 65538, 1, -262068, 65538, 1, -524211, 65538, 1, -458675, 65538, 1, -393139, 65538, 1, -327603, 65538, 1, -262067, 65538, 1)
 layer_1/name = "background"
 layer_1/enabled = false
 layer_1/z_index = -1
@@ -55,7 +54,7 @@ layer_1/tile_data = PackedInt32Array(-1769500, 131074, 4, -1703964, 131074, 4, -
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Clear" parent="CanvasLayer" instance=ExtResource("3_4i5le")]
+[node name="Clear" parent="CanvasLayer" instance=ExtResource("3_wta20")]
 visible = false
 
 [node name="StageLabel" type="Control" parent="CanvasLayer"]
@@ -72,95 +71,70 @@ offset_right = 57.0
 offset_bottom = 137.0
 scale = Vector2(0.0459519, 0.0529529)
 text = "1"
-label_settings = SubResource("LabelSettings_vwn5t")
+label_settings = SubResource("LabelSettings_37mc0")
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_uwxy1")]
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_vhe1x")]
 visible = false
 offset_left = -17.0
 offset_top = 1.0
 offset_right = -17.0
 offset_bottom = 1.0
 
-[node name="Option" parent="CanvasLayer" instance=ExtResource("5_1rwdi")]
+[node name="Option" parent="CanvasLayer" instance=ExtResource("4_0uows")]
 visible = false
 offset_left = -17.0
 offset_top = 1.0
 offset_right = -17.0
 offset_bottom = 1.0
 
-[node name="ElapsedTime" parent="CanvasLayer" instance=ExtResource("6_e0da8")]
+[node name="ElapsedTime" parent="CanvasLayer" instance=ExtResource("5_p8ifr")]
 metadata/_edit_use_anchors_ = true
 
 [node name="KillzoneTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Gunner" parent="." instance=ExtResource("7_16ir4")]
+[node name="Gunner" parent="." instance=ExtResource("6_6tqv5")]
 position = Vector2(-15, 297)
 
-[node name="Bullet" parent="." instance=ExtResource("8_n3g8s")]
+[node name="Bullet" parent="." instance=ExtResource("7_tog12")]
 position = Vector2(15, 296)
 
 [node name="Camera2D" type="Camera2D" parent="Bullet"]
 
-[node name="Wall" parent="." instance=ExtResource("9_5tfqc")]
+[node name="Wall" parent="." instance=ExtResource("8_baawd")]
 scale = Vector2(0.956139, 1)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 visible = false
 position = Vector2(-58.5689, -24)
-shape = SubResource("RectangleShape2D_ddyet")
+shape = SubResource("RectangleShape2D_06f2u")
 
 [node name="Enemy" type="Node2D" parent="."]
 position = Vector2(416, 314)
 scale = Vector2(2.54541, 2.38691)
 
-[node name="Enemy" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(-85.2515, -2.93266)
-
-[node name="Enemy2" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(-15.7146, -111.441)
-scale = Vector2(1, 1)
-
-[node name="Enemy3" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(144.574, -114.793)
-
-[node name="Enemy4" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(301.72, -114.793)
-
-[node name="Enemy5" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(487.151, -235.451)
-
-[node name="Enemy6" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(553.153, -111.441)
-
-[node name="Enemy7" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(722.87, -111.441)
-
-[node name="Enemy8" parent="Enemy" instance=ExtResource("10_vth3q")]
-position = Vector2(889.444, -111.441)
-
-[node name="Goal" parent="." instance=ExtResource("11_mbmys")]
-position = Vector2(3104, 40)
+[node name="Goal" parent="." instance=ExtResource("9_rs4ti")]
+position = Vector2(1928, -168)
 scale = Vector2(3.37918, 3.0314)
 
-[node name="Killzone" parent="." instance=ExtResource("12_x3iyv")]
+[node name="Killzone" parent="." instance=ExtResource("10_4rmqx")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(-952, -154)
 rotation = -3.14159
 scale = Vector2(6.74618, -6.45382)
-shape = SubResource("RectangleShape2D_fjqd2")
+shape = SubResource("RectangleShape2D_3ewww")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1059, 779)
 scale = Vector2(1.00903, 1)
-shape = SubResource("RectangleShape2D_gbxv3")
+shape = SubResource("RectangleShape2D_hr67a")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1110, -1027)
-shape = SubResource("RectangleShape2D_4csp0")
+shape = SubResource("RectangleShape2D_qps6s")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(4824, -8)
-shape = SubResource("RectangleShape2D_3v18m")
+position = Vector2(2592, -8)
+shape = SubResource("RectangleShape2D_wjjcm")

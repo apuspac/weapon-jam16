@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://bu1a1amm11nhx"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_ysxjp"]
-[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="2_jaxd0"]
+[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scripts/clear_ui_old.tscn" id="2_jaxd0"]
 [ext_resource type="Texture2D" uid="uid://dfu2wwfdw77w5" path="res://assets/tiny-creatures/tiny-creatures/Tilemap/Kenney_tiny_dungeon.png" id="2_tgvig"]
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="3_nqu0i"]
 [ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="4_d6mi1"]

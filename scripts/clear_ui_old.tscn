@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj31nbqapcsb7"]
+
+[ext_resource type="Theme" uid="uid://dlaih7uflgau5" path="res://scripts/parts_scripts/Ui.tres" id="1_5rxso"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/clear_ui.gd" id="1_dsltc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6dya1"]
+font_size = 100
+outline_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_48cim"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_26gnk"]
+font_size = 100
+outline_size = 5
+
+[node name="Clear" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5rxso")
+script = ExtResource("1_dsltc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 197.0
+offset_right = 894.0
+offset_bottom = 458.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="ClearLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CLEAR
+"
+label_settings = SubResource("LabelSettings_6dya1")
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "0:00:"
+label_settings = SubResource("LabelSettings_48cim")
+horizontal_alignment = 1
+
+[node name="NextLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "NEXT >>>>"
+label_settings = SubResource("LabelSettings_26gnk")
