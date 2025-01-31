@@ -41,7 +41,7 @@ offset_top = 163.0
 offset_right = 174.0
 offset_bottom = 252.0
 grow_horizontal = 2
-text = "weapons adventure
+text = "Weapons Adventure
 "
 label_settings = SubResource("LabelSettings_r5rar")
 
@@ -63,6 +63,7 @@ text = "Start
 "
 
 [node name="Option" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Option
 "
