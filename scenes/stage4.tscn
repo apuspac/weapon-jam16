@@ -280,6 +280,7 @@ offset_bottom = 1.0
 [node name="ElapsedTime" parent="CanvasLayer" instance=ExtResource("8_qt74h")]
 
 [node name="KillzoneTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="Gunner" parent="." instance=ExtResource("9_qswgq")]
