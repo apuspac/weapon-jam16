@@ -2,13 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/parts_scripts/elapsed_time.gd" id="1_7leca"]
 [ext_resource type="Theme" uid="uid://dlaih7uflgau5" path="res://scripts/parts_scripts/Ui.tres" id="1_rot3f"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_j8kpk"]
-font_size = 50
+[ext_resource type="LabelSettings" uid="uid://2s0ey5tjixen" path="res://scripts/parts_scripts/timer.tres" id="2_jxwop"]
 
 [node name="ElapsedTime" type="Label"]
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 51.0
 theme = ExtResource("1_rot3f")
-label_settings = SubResource("LabelSettings_j8kpk")
+label_settings = ExtResource("2_jxwop")
 script = ExtResource("1_7leca")

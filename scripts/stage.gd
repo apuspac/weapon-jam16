@@ -49,7 +49,7 @@ func stage_cleared():
     var next_stage: String = "stage" + str(next_stage_int) + ".tscn"
 
     # 10ステージだった場合 endに遷移
-    if next_stage_int > 8:
+    if next_stage_int > 10:
         get_tree().change_scene_to_file("res://scenes/end.tscn")
     else:
         get_tree().change_scene_to_file("res://scenes/" + next_stage)
