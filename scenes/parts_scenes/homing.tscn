@@ -22,3 +22,7 @@ shape = SubResource("RectangleShape2D_4yfyn")
 [node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_3xket")
 bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

@@ -41,3 +41,7 @@ texture = ExtResource("5_m78uk")
 [node name="BombSprite" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5614)
 texture = ExtResource("6_pkpsn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

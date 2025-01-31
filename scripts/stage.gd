@@ -7,6 +7,7 @@ signal notice_off_pause_menu()
 var is_paused: bool = false
 var is_stage_cleared: bool = false
 
+
 func _ready():
     var goal = get_node("Goal")
     goal.notice_hit_goal.connect(self._on_stage_cleared)
@@ -16,6 +17,7 @@ func _ready():
 
     var pause_menu = get_node("CanvasLayer/PauseMenu")
     pause_menu.notice_resume_game.connect(self.handle_pause_menu)
+
 
 func _process(_delta):
     if Input.is_action_just_pressed("A_button"):
@@ -56,4 +58,8 @@ func _on_stage_cleared():
 
 
 func _on_end_killtimer():
+    get_tree().reload_current_scene()
+
+
+func stage_restart():
     get_tree().reload_current_scene()
