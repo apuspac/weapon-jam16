@@ -59,16 +59,16 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ewww"]
-size = Vector2(29.9027, 145.469)
+size = Vector2(44.5975, 308.654)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hr67a"]
-size = Vector2(2709.54, 168)
+size = Vector2(1696.68, 168)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qps6s"]
-size = Vector2(2321, 221)
+size = Vector2(2168.5, 221)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjjcm"]
-size = Vector2(196, 935)
+size = Vector2(196, 1971.5)
 
 [node name="Stage6" type="Node2D"]
 script = ExtResource("1_cg843")
@@ -202,20 +202,20 @@ libraries = {
 [node name="Killzone" parent="." instance=ExtResource("10_rw5ed")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-952, -154)
+position = Vector2(-656, -128)
 rotation = -3.14159
 scale = Vector2(6.74618, -6.45382)
 shape = SubResource("RectangleShape2D_3ewww")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1059, 779)
+position = Vector2(352, 779)
 scale = Vector2(1.00903, 1)
 shape = SubResource("RectangleShape2D_hr67a")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(982, -2944)
+position = Vector2(339.75, -1232)
 shape = SubResource("RectangleShape2D_qps6s")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(2592, -8)
+position = Vector2(1320, -134.25)
 shape = SubResource("RectangleShape2D_wjjcm")

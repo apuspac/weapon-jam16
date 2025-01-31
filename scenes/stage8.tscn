@@ -20,16 +20,16 @@ font_size = 100
 size = Vector2(21, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmgyx"]
-size = Vector2(29.9027, 145.469)
+size = Vector2(29.9027, 276.025)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_obpfk"]
-size = Vector2(2709.54, 168)
+size = Vector2(2382.49, 168)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qcmjx"]
-size = Vector2(2321, 221)
+size = Vector2(2640.5, 221)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fnjq"]
-size = Vector2(196, 935)
+size = Vector2(196, 1587.5)
 
 [node name="Stage8" type="Node2D"]
 script = ExtResource("1_tf2ph")
@@ -146,20 +146,20 @@ scale = Vector2(3.37918, 3.0314)
 [node name="Killzone" parent="." instance=ExtResource("12_8yt6q")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-952, -154)
+position = Vector2(-407.999, -13.2923)
 rotation = -3.14159
 scale = Vector2(6.74618, -6.45382)
 shape = SubResource("RectangleShape2D_pmgyx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1059, 779)
+position = Vector2(893.998, 779)
 scale = Vector2(1.00903, 1)
 shape = SubResource("RectangleShape2D_obpfk")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1110, -1027)
+position = Vector2(791.75, -1024)
 shape = SubResource("RectangleShape2D_qcmjx")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(2592, -8)
+position = Vector2(1992, -102.25)
 shape = SubResource("RectangleShape2D_7fnjq")
