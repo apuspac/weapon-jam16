@@ -34,12 +34,6 @@ func handle_pause_menu():
         notice_off_pause_menu.emit()
         Engine.time_scale = 1
 
-
-
-
-
-
-
 func _input(_event: InputEvent):
     if is_stage_cleared and _event is InputEventMouseButton:
         print_debug("next stage")

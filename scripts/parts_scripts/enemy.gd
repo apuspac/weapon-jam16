@@ -16,9 +16,6 @@ func _ready():
     # queue_free_timer.timeout.connect(self.queu)
     explosion.animation_finished.connect(self.queue_free)
 
-
-
-
 func _process(_delta):
     pass
 

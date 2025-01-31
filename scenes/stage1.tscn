@@ -22,16 +22,16 @@ font_size = 100
 size = Vector2(21, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j3ts"]
-size = Vector2(29.9027, 145.469)
+size = Vector2(29.9027, 194.368)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gingw"]
-size = Vector2(2709.54, 168)
+size = Vector2(2763.05, 168)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1i3a"]
-size = Vector2(2321, 221)
+size = Vector2(2597, 221)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2n47e"]
-size = Vector2(196, 935)
+size = Vector2(196, 1440)
 
 [sub_resource type="Animation" id="Animation_bjpo5"]
 length = 0.001
@@ -198,8 +198,7 @@ position = Vector2(320.577, -84.6283)
 script = ExtResource("13_wgi2t")
 
 [node name="MoveFloor" parent="Enemy/Enemy6" instance=ExtResource("12_wd2hx")]
-position = Vector2(0, 16.7581)
-scale = Vector2(0.392864, 0.418952)
+position = Vector2(0, 13.4065)
 
 [node name="Goal" parent="." instance=ExtResource("7_t2lmb")]
 position = Vector2(2256, 304)
@@ -208,22 +207,22 @@ scale = Vector2(3.37918, 3.0314)
 [node name="Killzone" parent="." instance=ExtResource("9_4caju")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-225.135, -97)
+position = Vector2(-225.135, 60.7923)
 rotation = -3.14159
 scale = Vector2(6.74618, -6.45382)
 shape = SubResource("RectangleShape2D_6j3ts")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1059, 779)
+position = Vector2(1086, 779)
 scale = Vector2(1.00903, 1)
 shape = SubResource("RectangleShape2D_gingw")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1043.5, -456)
+position = Vector2(1181.5, -456)
 shape = SubResource("RectangleShape2D_k1i3a")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(2592, -8)
+position = Vector2(2592, 144)
 shape = SubResource("RectangleShape2D_2n47e")
 
 [node name="MoveFloor_Enemy3" parent="." instance=ExtResource("12_wd2hx")]

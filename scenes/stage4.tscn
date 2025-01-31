@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://crcjryeto73e2"]
+[gd_scene load_steps=23 format=3 uid="uid://crcjryeto73e2"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_3sqlb"]
 [ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_3vfnq"]
@@ -8,12 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="8_qt74h"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="9_qswgq"]
 [ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="10_j3jvx"]
+[ext_resource type="PackedScene" uid="uid://d1wrmgl7ppvn2" path="res://scenes/parts_scenes/enemy_move.tscn" id="11_k07co"]
 [ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="11_ylb1n"]
+[ext_resource type="PackedScene" uid="uid://b6doycp2lnfrs" path="res://scenes/parts_scenes/up_and_down.tscn" id="12_j2ahk"]
 [ext_resource type="PackedScene" uid="uid://x1ti0vcmjvvw" path="res://scenes/parts_scenes/enemy.tscn" id="12_oyblv"]
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="13_1qx6i"]
-[ext_resource type="Script" path="res://scripts/parts_scripts/enemy_bullet_floor.gd" id="13_fkred"]
+[ext_resource type="PackedScene" uid="uid://crax4iexltbw6" path="res://scenes/parts_scenes/up_and_down2.tscn" id="13_lamki"]
+[ext_resource type="PackedScene" uid="uid://ds4wgui0fiimy" path="res://scenes/parts_scenes/up_and_down3.tscn" id="14_fryks"]
 [ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="14_pcykd"]
-[ext_resource type="PackedScene" uid="uid://b5olgp0dmk5cf" path="res://scenes/parts_scenes/move_floor.tscn" id="14_w6if7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l0y4c"]
 font_size = 100
@@ -21,204 +23,17 @@ font_size = 100
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwm3y"]
 size = Vector2(21, 96)
 
-[sub_resource type="Animation" id="Animation_31xka"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(37.7149, -124.848)]
-}
-
-[sub_resource type="Animation" id="Animation_ddxmh"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(37.7149, -124.848), Vector2(37.7149, -67.8702), Vector2(37.7149, -7.54113)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdmld"]
-_data = {
-"RESET": SubResource("Animation_31xka"),
-"move": SubResource("Animation_ddxmh")
-}
-
-[sub_resource type="Animation" id="Animation_hg785"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(157.146, -64.5186)]
-}
-
-[sub_resource type="Animation" id="Animation_7mcs6"]
-resource_name = "move"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(157.146, -64.5186), Vector2(157.146, -128.199), Vector2(154.003, 5.86533)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ejpx"]
-_data = {
-"RESET": SubResource("Animation_hg785"),
-"move": SubResource("Animation_7mcs6")
-}
-
-[sub_resource type="Animation" id="Animation_3rxvo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(292.291, 42.7331)]
-}
-
-[sub_resource type="Animation" id="Animation_rpxie"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(292.291, 42.7331), Vector2(289.148, -27.6508), Vector2(286.005, -101.386)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w08hb"]
-_data = {
-"RESET": SubResource("Animation_3rxvo"),
-"move": SubResource("Animation_rpxie")
-}
-
-[sub_resource type="Animation" id="Animation_rsv5x"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(430.579, -205.286)]
-}
-
-[sub_resource type="Animation" id="Animation_oyqd3"]
-resource_name = "move"
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(433.722, -47.7605), Vector2(430.579, -124.848), Vector2(430.579, -205.286)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jiuk4"]
-_data = {
-"RESET": SubResource("Animation_rsv5x"),
-"move": SubResource("Animation_oyqd3")
-}
-
-[sub_resource type="Animation" id="Animation_o4o30"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1928, -168)]
-}
-
-[sub_resource type="Animation" id="Animation_da4ta"]
-resource_name = "move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1928, -168), Vector2(1928, -312)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_34slo"]
-_data = {
-"RESET": SubResource("Animation_o4o30"),
-"move": SubResource("Animation_da4ta")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik5v5"]
-size = Vector2(29.9027, 145.469)
+size = Vector2(29.9027, 252.874)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7acc"]
-size = Vector2(2709.54, 168)
+size = Vector2(2778.91, 168)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dab3u"]
-size = Vector2(2321, 221)
+size = Vector2(2622.5, 221)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enl4c"]
-size = Vector2(196, 935)
+size = Vector2(196, 1816)
 
 [node name="Stage4" type="Node2D"]
 script = ExtResource("1_3sqlb")
@@ -280,6 +95,7 @@ offset_bottom = 1.0
 [node name="ElapsedTime" parent="CanvasLayer" instance=ExtResource("8_qt74h")]
 
 [node name="KillzoneTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="Gunner" parent="." instance=ExtResource("9_qswgq")]
@@ -306,81 +122,56 @@ scale = Vector2(2.54541, 2.38691)
 [node name="Enemy" parent="Enemy" instance=ExtResource("12_oyblv")]
 position = Vector2(-81.7157, -4.18952)
 
-[node name="Enemy2" parent="Enemy" instance=ExtResource("12_oyblv")]
-position = Vector2(37.7149, -124.848)
-script = ExtResource("13_fkred")
+[node name="Enemy2" type="Node2D" parent="Enemy"]
+position = Vector2(37.7149, -128.199)
 
-[node name="MoveFloor" parent="Enemy/Enemy2" instance=ExtResource("14_w6if7")]
-position = Vector2(0, 13.4065)
-scale = Vector2(0.3, 0.3)
+[node name="EnemyMove" parent="Enemy/Enemy2" instance=ExtResource("11_k07co")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Enemy2/MoveFloor"]
-libraries = {
-"": SubResource("AnimationLibrary_pdmld")
-}
+[node name="AnimationPlayer" parent="Enemy/Enemy2" instance=ExtResource("12_j2ahk")]
 
-[node name="Enemy3" parent="Enemy" instance=ExtResource("12_oyblv")]
+[node name="Enemy3" type="Node2D" parent="Enemy"]
 position = Vector2(157.146, -64.5186)
 
-[node name="MoveFloor" parent="Enemy/Enemy3" instance=ExtResource("14_w6if7")]
-position = Vector2(0, 16.7581)
+[node name="EnemyMove" parent="Enemy/Enemy3" instance=ExtResource("11_k07co")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Enemy3/MoveFloor"]
-libraries = {
-"": SubResource("AnimationLibrary_5ejpx")
-}
+[node name="AnimationPlayer" parent="Enemy/Enemy3" instance=ExtResource("13_lamki")]
 
-[node name="Enemy4" parent="Enemy" instance=ExtResource("12_oyblv")]
+[node name="Enemy4" type="Node2D" parent="Enemy"]
 position = Vector2(292.291, 42.7331)
 
-[node name="MoveFloor" parent="Enemy/Enemy4" instance=ExtResource("14_w6if7")]
-position = Vector2(4.7957e-05, 13.4065)
+[node name="EnemyMove" parent="Enemy/Enemy4" instance=ExtResource("11_k07co")]
+position = Vector2(0, -100)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Enemy4/MoveFloor"]
-libraries = {
-"": SubResource("AnimationLibrary_w08hb")
-}
+[node name="AnimationPlayer" parent="Enemy/Enemy4" instance=ExtResource("14_fryks")]
 
-[node name="Enemy5" parent="Enemy" instance=ExtResource("12_oyblv")]
+[node name="Enemy5" type="Node2D" parent="Enemy"]
 position = Vector2(430.579, -205.286)
 
-[node name="MoveFloor" parent="Enemy/Enemy5" instance=ExtResource("14_w6if7")]
-position = Vector2(0, 13.4065)
+[node name="EnemyMove" parent="Enemy/Enemy5" instance=ExtResource("11_k07co")]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy/Enemy5/MoveFloor"]
-libraries = {
-"": SubResource("AnimationLibrary_jiuk4")
-}
+[node name="AnimationPlayer" parent="Enemy/Enemy5" instance=ExtResource("12_j2ahk")]
 
 [node name="Goal" parent="." instance=ExtResource("13_1qx6i")]
 position = Vector2(1928, -168)
 scale = Vector2(3.37918, 3.0314)
 
-[node name="MoveFloor" parent="Goal" instance=ExtResource("14_w6if7")]
-position = Vector2(0, 13.1952)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Goal/MoveFloor"]
-libraries = {
-"": SubResource("AnimationLibrary_34slo")
-}
-
 [node name="Killzone" parent="." instance=ExtResource("14_pcykd")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-225.135, -97)
+position = Vector2(-225.135, -120)
 rotation = -3.14159
 scale = Vector2(6.74618, -6.45382)
 shape = SubResource("RectangleShape2D_ik5v5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1059, 779)
+position = Vector2(1094, 779)
 scale = Vector2(1.00903, 1)
 shape = SubResource("RectangleShape2D_h7acc")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1043.5, -456)
+position = Vector2(1183.25, -832)
 shape = SubResource("RectangleShape2D_dab3u")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(2592, -8)
+position = Vector2(2592, -36)
 shape = SubResource("RectangleShape2D_enl4c")
