@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://x1ti0vcmjvvw"]
 
 [ext_resource type="Texture2D" uid="uid://b6gq1x1xobq61" path="res://assets/tiny-creatures/tiny-creatures/Tiles/tile_0016.png" id="1_21gs8"]
-[ext_resource type="Script" path="res://scripts/parts_scripts/enemy.gd" id="1_s2lpt"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/enemy_bullet.gd" id="1_dkpan"]
 [ext_resource type="Texture2D" uid="uid://t43kfnaukob" path="res://assets/Fire Effect 2/Explosion SpriteSheet.png" id="3_dnv2n"]
 [ext_resource type="AudioStream" uid="uid://c3puw62cjv4of" path="res://assets/Classic Arcade SFX/Explosions/Explosion_10.wav" id="4_2w0un"]
 
@@ -128,7 +128,7 @@ animations = [{
 }]
 
 [node name="Enemy" type="Node2D" groups=["Enemy"]]
-script = ExtResource("1_s2lpt")
+script = ExtResource("1_dkpan")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_21gs8")

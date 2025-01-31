@@ -15,12 +15,15 @@ var state: States = States.IDLE
 @onready var shoot_sfx = get_node("ShootSFX")
 @onready var falldown_sfx = get_node("FalldownSFX")
 
+@onready var root_stage = get_parent()
+@onready var falldown_timer = get_node("Timer")
+
 
 func _ready():
     state = States.IDLE
 
-    var wall = get_node("../Wall")
-    wall.body_entered.connect(self._on_wall_body_entered)
+    # var wall = get_node("../Wall")
+    # wall.body_entered.connect(self._on_wall_body_entered)
 
     var enemies = get_tree().get_nodes_in_group("Enemy")
     for enemy in enemies:
@@ -31,6 +34,8 @@ func _ready():
 
     var killzone_enter = get_node("../Killzone")
     killzone_enter.notice_enter_killzone.connect(self._on_enter_killzone)
+
+    falldown_timer.timeout.connect(self._on_falldown_timer_timeout)
 
 
 func _physics_process(_delta):
@@ -51,10 +56,11 @@ func _physics_process(_delta):
             break_goal()
 
 func change_state(next_state: States):
+    print_debug(state, "->", next_state)
     state = next_state
 
 func idle():
-    if Input.is_action_just_pressed("B_button"):
+    if Input.is_action_just_pressed("left_click"):
         fire(get_global_mouse_position())
         change_state(States.FLIGHT)
 
@@ -73,14 +79,26 @@ func idle_fire():
     velocity.y += gravity * 0.02
     move_and_slide()
 
-    if Input.is_action_just_pressed("B_button"):
+    if Input.is_action_just_pressed("left_click"):
         fire(get_global_mouse_position())
         change_state(States.FLIGHT)
+        Engine.time_scale = 1.0
+
+    # if Input.is_action_pressed("right_click"):
+    #     Engine.time_scale = 0.5
+    # else:
+    #     Engine.time_scale = 1.0
 
 func falldown():
-    velocity.y += gravity * 0.02
-    move_and_slide()
+    set_collision_layer_value(1, false)
+    set_collision_mask_value(2, false)
     falldown_sfx.play()
+    falldown_timer.start(1.0)
+
+    velocity = Vector2.ZERO
+
+    change_state(States.KILL)
+
 
 
 func break_goal():
@@ -88,8 +106,12 @@ func break_goal():
     direction = Vector2.ZERO
     speed = 0
 
+var falldown_rotate_angle: float = 0.0
 func kill():
+    velocity.y += gravity * 0.02
     move_and_slide()
+    falldown_rotate_angle += 0.2
+    sprite_rotation(falldown_rotate_angle)
     # TODO: bulletがanimationがあれば、
     # print_debug("bullet enter killzone")
 
@@ -108,11 +130,25 @@ func _on_hit_goal():
 func _on_enter_killzone():
     change_state(States.KILL)
 
-func _on_wall_body_entered(_body: Node2D):
+# func _on_wall_body_entered(_body: Node2D):
+#     change_state(States.FALLDOWN)
+
+func _on_wall_collision():
+    print_debug("wall collision")
     change_state(States.FALLDOWN)
+
+
+func _on_falldown_timer_timeout():
+    print_debug("timerout")
+    root_stage.stage_restart()
 
 func _process(_delta):
     draw_projectile_to_mouse()
+
+    # wallのcollision検知
+    if state == States.FLIGHT or state == States.IDLEFIRE:
+        if is_on_floor() or is_on_wall() or is_on_ceiling():
+            _on_wall_collision()
 
 
 func sprite_rotation(angle: float):
