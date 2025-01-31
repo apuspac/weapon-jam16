@@ -99,7 +99,7 @@ func fire(target_position: Vector2):
 
 
 
-func _on_hit_enemy():
+func _on_hit_enemy(_enemy_id: int):
     change_state(States.HIT)
 
 func _on_hit_goal():

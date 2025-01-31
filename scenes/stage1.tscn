@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="8_qf4i1"]
 [ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="9_4caju"]
 [ext_resource type="PackedScene" uid="uid://b5olgp0dmk5cf" path="res://scenes/parts_scenes/move_floor.tscn" id="12_wd2hx"]
-[ext_resource type="Script" path="res://scripts/parts_scripts/enemy_bullet_floor.gd" id="13_wgi2t"]
+[ext_resource type="Script" path="res://scripts/parts_scripts/enemy_bullet.gd" id="13_wgi2t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ns5qd"]
 font_size = 100

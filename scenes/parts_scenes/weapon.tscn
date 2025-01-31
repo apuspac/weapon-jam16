@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://pd7nteskemnu"]
+
+[ext_resource type="Script" path="res://scripts/parts_scripts/weapon.gd" id="1_k1rn4"]
+[ext_resource type="Texture2D" uid="uid://dl63ud2cdwsgf" path="res://assets/my_asset/bullet.png" id="2_tfo8j"]
+[ext_resource type="AudioStream" uid="uid://cg3b2ia4sa1ef" path="res://assets/Classic Arcade SFX/Lasers and shooting/Shoot_1.wav" id="3_37xm3"]
+[ext_resource type="AudioStream" uid="uid://cege872w14a5n" path="res://assets/Classic Arcade SFX/Power ups and power downs/power down_high pitch.wav" id="4_gbehb"]
+[ext_resource type="Texture2D" uid="uid://diiw8y3msgkar" path="res://assets/my_asset/missile.png" id="5_m78uk"]
+[ext_resource type="Texture2D" uid="uid://dxrub664wal01" path="res://assets/my_asset/bomb_eye.png" id="6_pkpsn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvab7"]
+size = Vector2(35, 37)
+
+[node name="Weapon" type="CharacterBody2D"]
+script = ExtResource("1_k1rn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5614)
+texture = ExtResource("2_tfo8j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 1)
+scale = Vector2(1.23118, 0.871395)
+shape = SubResource("RectangleShape2D_nvab7")
+
+[node name="ShootSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_37xm3")
+bus = &"SFX"
+
+[node name="FalldownSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gbehb")
+bus = &"SFX"
+
+[node name="BulletSprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5614)
+texture = ExtResource("2_tfo8j")
+
+[node name="MissileSprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5614)
+texture = ExtResource("5_m78uk")
+
+[node name="BombSprite" type="Sprite2D" parent="."]
+scale = Vector2(2.5, 2.5614)
+texture = ExtResource("6_pkpsn")
