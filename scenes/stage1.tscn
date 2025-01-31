@@ -198,8 +198,7 @@ position = Vector2(320.577, -84.6283)
 script = ExtResource("13_wgi2t")
 
 [node name="MoveFloor" parent="Enemy/Enemy6" instance=ExtResource("12_wd2hx")]
-position = Vector2(0, 16.7581)
-scale = Vector2(0.392864, 0.418952)
+position = Vector2(0, 13.4065)
 
 [node name="Goal" parent="." instance=ExtResource("7_t2lmb")]
 position = Vector2(2256, 304)

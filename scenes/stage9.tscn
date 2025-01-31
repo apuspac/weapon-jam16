@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dc4vc5sdbaso7"]
+[gd_scene load_steps=25 format=3 uid="uid://dc4vc5sdbaso7"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_7rdjn"]
 [ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_85t5o"]
@@ -15,6 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://ds4wgui0fiimy" path="res://scenes/parts_scenes/up_and_down3.tscn" id="13_80fqa"]
 [ext_resource type="PackedScene" uid="uid://d1wrmgl7ppvn2" path="res://scenes/parts_scenes/enemy_move.tscn" id="13_mdgpe"]
 [ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="13_t504v"]
+[ext_resource type="PackedScene" uid="uid://dsv8sx34eabgs" path="res://scenes/parts_scenes/left_and_right.tscn" id="14_cnhcx"]
+[ext_resource type="PackedScene" uid="uid://bl2y3pewsgbxs" path="res://scenes/parts_scenes/left_and_right2.tscn" id="15_to7l8"]
+[ext_resource type="PackedScene" uid="uid://f2ph50u2o8v4" path="res://scenes/parts_scenes/left_and_rifht3.tscn" id="16_ncic7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dc1yu"]
 font_size = 100
@@ -153,6 +156,30 @@ scale = Vector2(1, 1)
 scale = Vector2(1, 1)
 
 [node name="AnimationPlayer" parent="Enemys/Enemy4" instance=ExtResource("11_d76en")]
+
+[node name="Enemy5" type="Node2D" parent="Enemys"]
+position = Vector2(565.724, -61.167)
+
+[node name="EnemyMove" parent="Enemys/Enemy5" instance=ExtResource("13_mdgpe")]
+scale = Vector2(1, 1)
+
+[node name="AnimationPlayer" parent="Enemys/Enemy5" instance=ExtResource("14_cnhcx")]
+
+[node name="Enemy6" type="Node2D" parent="Enemys"]
+position = Vector2(562.581, -155.012)
+
+[node name="EnemyMove" parent="Enemys/Enemy6" instance=ExtResource("13_mdgpe")]
+scale = Vector2(1, 1)
+
+[node name="AnimationPlayer" parent="Enemys/Enemy6" instance=ExtResource("15_to7l8")]
+
+[node name="Enemy7" type="Node2D" parent="Enemys"]
+position = Vector2(565.724, -265.615)
+
+[node name="EnemyMove" parent="Enemys/Enemy7" instance=ExtResource("13_mdgpe")]
+scale = Vector2(1, 1)
+
+[node name="AnimationPlayer" parent="Enemys/Enemy7" instance=ExtResource("16_ncic7")]
 
 [node name="Goal" parent="." instance=ExtResource("12_0vso3")]
 position = Vector2(2312, -496)

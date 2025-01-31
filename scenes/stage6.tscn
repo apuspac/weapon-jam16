@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="9_vtj6m"]
 [ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="10_rw5ed"]
 [ext_resource type="PackedScene" uid="uid://b5olgp0dmk5cf" path="res://scenes/parts_scenes/move_floor.tscn" id="11_3fyi6"]
-[ext_resource type="PackedScene" uid="uid://jlchm8co1d3j" path="res://scenes/parts_scenes/left_and_right2.tscn" id="12_raucq"]
+[ext_resource type="PackedScene" uid="uid://bl2y3pewsgbxs" path="res://scenes/parts_scenes/left_and_right2.tscn" id="12_raucq"]
 [ext_resource type="PackedScene" uid="uid://dsv8sx34eabgs" path="res://scenes/parts_scenes/left_and_right.tscn" id="12_x6upe"]
 [ext_resource type="PackedScene" uid="uid://d1wrmgl7ppvn2" path="res://scenes/parts_scenes/enemy_move.tscn" id="13_oojbo"]
 
@@ -164,7 +164,6 @@ position = Vector2(-25.4797, 147.379)
 [node name="Enemy2" type="Node2D" parent="EnemyH"]
 
 [node name="EnemyMove" parent="EnemyH/Enemy2" instance=ExtResource("13_oojbo")]
-position = Vector2(100, 0)
 
 [node name="AnimationPlayer" parent="EnemyH/Enemy2" instance=ExtResource("12_raucq")]
 
