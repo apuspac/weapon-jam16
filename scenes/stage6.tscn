@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://sn700e4vnbym"]
+[gd_scene load_steps=19 format=3 uid="uid://sn700e4vnbym"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_cg843"]
 [ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_0nh13"]
@@ -7,56 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="4_6dby6"]
 [ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="5_4nnix"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="6_8nfm5"]
-[ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="7_8d1g8"]
-[ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="8_fwneq"]
+[ext_resource type="PackedScene" uid="uid://pd7nteskemnu" path="res://scenes/parts_scenes/weapon.tscn" id="8_h3ypl"]
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="9_vtj6m"]
 [ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="10_rw5ed"]
-[ext_resource type="PackedScene" uid="uid://b5olgp0dmk5cf" path="res://scenes/parts_scenes/move_floor.tscn" id="11_3fyi6"]
 [ext_resource type="PackedScene" uid="uid://bl2y3pewsgbxs" path="res://scenes/parts_scenes/left_and_right2.tscn" id="12_raucq"]
 [ext_resource type="PackedScene" uid="uid://dsv8sx34eabgs" path="res://scenes/parts_scenes/left_and_right.tscn" id="12_x6upe"]
 [ext_resource type="PackedScene" uid="uid://d1wrmgl7ppvn2" path="res://scenes/parts_scenes/enemy_move.tscn" id="13_oojbo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_37mc0"]
 font_size = 100
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_06f2u"]
-size = Vector2(21, 96)
-
-[sub_resource type="Animation" id="Animation_mf4mq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(576, -824)]
-}
-
-[sub_resource type="Animation" id="Animation_to8qp"]
-resource_name = "move"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(600, -1000), Vector2(848, -1000)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_77vyy"]
-_data = {
-"RESET": SubResource("Animation_mf4mq"),
-"move": SubResource("Animation_to8qp")
-}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ewww"]
 size = Vector2(44.5975, 308.654)
@@ -136,68 +95,50 @@ one_shot = true
 [node name="Gunner" parent="." instance=ExtResource("6_8nfm5")]
 position = Vector2(-15, 297)
 
-[node name="Bullet" parent="." instance=ExtResource("7_8d1g8")]
+[node name="Weapon" parent="." instance=ExtResource("8_h3ypl")]
 position = Vector2(15, 296)
 
-[node name="Camera2D" type="Camera2D" parent="Bullet"]
+[node name="Camera2D" type="Camera2D" parent="Weapon"]
 
-[node name="Wall" parent="." instance=ExtResource("8_fwneq")]
-position = Vector2(-744, -272)
-scale = Vector2(0.956139, 1)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(-58.5689, -24)
-shape = SubResource("RectangleShape2D_06f2u")
-
-[node name="EnemyH" type="Node2D" parent="."]
+[node name="Enemys" type="Node2D" parent="."]
 position = Vector2(-47.1437, -295.78)
 scale = Vector2(2.54541, 2.38691)
 
-[node name="Enemy" type="Node2D" parent="EnemyH"]
+[node name="Enemy" type="Node2D" parent="Enemys"]
 position = Vector2(-25.4797, 147.379)
 
-[node name="EnemyMove" parent="EnemyH/Enemy" instance=ExtResource("13_oojbo")]
+[node name="EnemyMove" parent="Enemys/Enemy" instance=ExtResource("13_oojbo")]
 
-[node name="AnimationPlayer" parent="EnemyH/Enemy" instance=ExtResource("12_x6upe")]
+[node name="AnimationPlayer" parent="Enemys/Enemy" instance=ExtResource("12_x6upe")]
 
-[node name="Enemy2" type="Node2D" parent="EnemyH"]
+[node name="Enemy2" type="Node2D" parent="Enemys"]
 
-[node name="EnemyMove" parent="EnemyH/Enemy2" instance=ExtResource("13_oojbo")]
+[node name="EnemyMove" parent="Enemys/Enemy2" instance=ExtResource("13_oojbo")]
 
-[node name="AnimationPlayer" parent="EnemyH/Enemy2" instance=ExtResource("12_raucq")]
+[node name="AnimationPlayer" parent="Enemys/Enemy2" instance=ExtResource("12_raucq")]
 
-[node name="Enemy3" type="Node2D" parent="EnemyH"]
+[node name="Enemy3" type="Node2D" parent="Enemys"]
 position = Vector2(5.94941, -120.75)
 
-[node name="EnemyMove" parent="EnemyH/Enemy3" instance=ExtResource("13_oojbo")]
+[node name="EnemyMove" parent="Enemys/Enemy3" instance=ExtResource("13_oojbo")]
 
-[node name="AnimationPlayer" parent="EnemyH/Enemy3" instance=ExtResource("12_x6upe")]
+[node name="AnimationPlayer" parent="Enemys/Enemy3" instance=ExtResource("12_x6upe")]
 
-[node name="Enemy4" type="Node2D" parent="EnemyH"]
+[node name="Enemy4" type="Node2D" parent="Enemys"]
 visible = false
 position = Vector2(75.0935, -258.166)
 
-[node name="EnemyMove" parent="EnemyH/Enemy4" instance=ExtResource("13_oojbo")]
+[node name="EnemyMove" parent="Enemys/Enemy4" instance=ExtResource("13_oojbo")]
 visible = false
 
-[node name="AnimationPlayer" parent="EnemyH/Enemy4" instance=ExtResource("12_x6upe")]
+[node name="AnimationPlayer" parent="Enemys/Enemy4" instance=ExtResource("12_x6upe")]
 
-[node name="Enemy5" type="Node2D" parent="EnemyH"]
+[node name="Enemy5" type="Node2D" parent="Enemys"]
 visible = false
 
 [node name="Goal" parent="." instance=ExtResource("9_vtj6m")]
 position = Vector2(576, -824)
 scale = Vector2(3.37918, 3.0314)
-
-[node name="MoveFloor" parent="Goal" instance=ExtResource("11_3fyi6")]
-position = Vector2(0, 13.1952)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Goal"]
-root_node = NodePath("../MoveFloor")
-libraries = {
-"": SubResource("AnimationLibrary_77vyy")
-}
 
 [node name="Killzone" parent="." instance=ExtResource("10_rw5ed")]
 

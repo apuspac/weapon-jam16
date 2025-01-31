@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ckqe1acb6xjyc"]
+[gd_scene load_steps=16 format=3 uid="uid://ckqe1acb6xjyc"]
 
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_igby0"]
 [ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_1mpgg"]
@@ -7,16 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="4_0uows"]
 [ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="5_p8ifr"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="6_6tqv5"]
-[ext_resource type="PackedScene" uid="uid://fl1t4a44atua" path="res://scenes/parts_scenes/bullet.tscn" id="7_tog12"]
-[ext_resource type="PackedScene" uid="uid://xmgi4byorajx" path="res://scenes/parts_scenes/wall.tscn" id="8_baawd"]
+[ext_resource type="PackedScene" uid="uid://pd7nteskemnu" path="res://scenes/parts_scenes/weapon.tscn" id="8_mkrlk"]
 [ext_resource type="PackedScene" uid="uid://b86dtect06dcl" path="res://scenes/parts_scenes/goal.tscn" id="9_rs4ti"]
 [ext_resource type="PackedScene" uid="uid://cwg5g33fkn12u" path="res://scenes/parts_scenes/killzone.tscn" id="10_4rmqx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_37mc0"]
 font_size = 100
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_06f2u"]
-size = Vector2(21, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ewww"]
 size = Vector2(29.9027, 145.469)
@@ -96,19 +92,10 @@ one_shot = true
 [node name="Gunner" parent="." instance=ExtResource("6_6tqv5")]
 position = Vector2(-15, 297)
 
-[node name="Bullet" parent="." instance=ExtResource("7_tog12")]
+[node name="Weapon" parent="." instance=ExtResource("8_mkrlk")]
 position = Vector2(15, 296)
 
-[node name="Camera2D" type="Camera2D" parent="Bullet"]
-
-[node name="Wall" parent="." instance=ExtResource("8_baawd")]
-scale = Vector2(0.956139, 1)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-visible = false
-position = Vector2(-58.5689, -24)
-shape = SubResource("RectangleShape2D_06f2u")
+[node name="Camera2D" type="Camera2D" parent="Weapon"]
 
 [node name="Enemys" type="Node2D" parent="."]
 position = Vector2(416, 314)
