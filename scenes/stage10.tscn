@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_gdobj"]
 [ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_e4acc"]
 [ext_resource type="TileSet" uid="uid://nao4froxqcfh" path="res://scripts/parts_scripts/factory_tileset.tres" id="2_yo7p2"]
-[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="4_dl755"]
+[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scripts/clear_ui_old.tscn" id="4_dl755"]
 [ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="4_kjnde"]
 [ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="5_kfb4b"]
 [ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="6_310a1"]
@@ -110,7 +110,6 @@ position = Vector2(-84.8586, -7.54113)
 
 [node name="EnemyMissile2" parent="Enemys" instance=ExtResource("10_d22f2")]
 position = Vector2(125.716, -148.309)
-scale = Vector2(1, 1)
 
 [node name="EnemyMissile3" parent="Enemys" instance=ExtResource("10_d22f2")]
 position = Vector2(386.578, -104.738)

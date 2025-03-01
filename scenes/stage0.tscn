@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://b1ksy328wgdvm" path="res://scripts/parts_scripts/tileset.tres" id="2_1mpgg"]
 [ext_resource type="TileSet" uid="uid://nao4froxqcfh" path="res://scripts/parts_scripts/factory_tileset.tres" id="2_k3vru"]
 [ext_resource type="PackedScene" uid="uid://h7cv78td1yoe" path="res://scenes/parts_scenes/pause_panel.tscn" id="3_vhe1x"]
-[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scenes/parts_scenes/clear_ui.tscn" id="3_wta20"]
+[ext_resource type="PackedScene" uid="uid://dj31nbqapcsb7" path="res://scripts/clear_ui_old.tscn" id="3_wta20"]
 [ext_resource type="PackedScene" uid="uid://ba3m3jfxcgfh5" path="res://scenes/parts_scenes/option.tscn" id="4_0uows"]
 [ext_resource type="PackedScene" uid="uid://jknrdunplntn" path="res://scenes/parts_scenes/elapsed_time.tscn" id="5_p8ifr"]
 [ext_resource type="PackedScene" uid="uid://ckef1bcsgnono" path="res://scenes/parts_scenes/gunner.tscn" id="6_6tqv5"]
